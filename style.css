@@ -1,0 +1,116 @@
+
+:root{
+  --black:#09090a;
+  --charcoal:#141416;
+  --panel:#111113;
+  --paper:#e9e1d5;
+  --muted:#928b85;
+  --red:#8f1717;
+  --red2:#c7382f;
+  --gold:#b49a70;
+  --text:#eee7df;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--black)}
+body{font-family:"Roboto Mono",monospace;color:var(--text)}
+button,input,a{font:inherit}
+.stage{display:none;min-height:100vh;position:relative;padding:28px}
+.stage.active{display:block}
+.topline{
+  display:flex;justify-content:space-between;gap:20px;
+  font-size:.72rem;letter-spacing:.16em;color:#746d68;margin-bottom:42px
+}
+.intro-stage{
+  background:
+    radial-gradient(circle at 50% 18%,rgba(143,23,23,.10),transparent 25%),
+    linear-gradient(145deg,#0d0d0f,#070708 60%,#13090a)
+}
+.intro-card{
+  width:min(760px,100%);margin:0 auto;padding:clamp(28px,6vw,60px);
+  border:1px solid #302728;background:rgba(17,17,19,.88);
+  box-shadow:0 28px 80px rgba(0,0,0,.45)
+}
+.eyebrow{font-size:.74rem;letter-spacing:.17em;color:var(--red2);font-weight:700}
+h1,h2,h3,blockquote{font-family:"Cormorant Garamond",serif}
+.intro-card h1{font-size:clamp(3rem,9vw,5.8rem);margin:.2em 0 .4em}
+.note{font-family:"Cormorant Garamond",serif;font-size:1.28rem;line-height:1.65;color:#e3dbd3}
+.note p{margin:0 0 1.05em}
+.keys-preview{font-family:"Roboto Mono",monospace;font-size:.96rem;letter-spacing:.10em;color:#c8b6a9}
+.keys-preview span{display:inline-block;margin-right:10px}
+blockquote{
+  margin:1.4em 0;padding-left:20px;border-left:3px solid var(--red);
+  font-size:1.65rem;font-style:italic;color:#fff
+}
+.primary,.book-button{
+  min-height:50px;border:0;padding:14px 19px;cursor:pointer;
+  background:var(--red);color:white;font-weight:700;letter-spacing:.08em;text-decoration:none;display:inline-flex;align-items:center;justify-content:center
+}
+.primary:hover,.book-button:hover{background:#a91c1c}
+.sound-toggle{
+  position:fixed;right:16px;bottom:16px;z-index:99;
+  background:#111;border:1px solid #3b3232;color:#b9aaa6;padding:10px 13px;min-height:44px;cursor:pointer
+}
+.keys-stage,.deduction-stage,.activation-stage,.book-stage{
+  background:
+    radial-gradient(circle at 50% 22%,rgba(199,56,47,.08),transparent 27%),
+    linear-gradient(#0b0b0c,#070708);
+  display:none
+}
+.keys-stage.active,.deduction-stage.active,.activation-stage.active,.book-stage.active{display:grid;place-items:center}
+.terminal,.activation-card,.book-shell{
+  width:min(720px,100%);padding:clamp(28px,6vw,55px);
+  border:1px solid #332b2b;background:rgba(16,16,18,.92);
+  box-shadow:0 26px 80px rgba(0,0,0,.45)
+}
+.terminal h2,.activation-card h2,.book-shell h2{
+  font-size:clamp(3rem,9vw,5.7rem);line-height:.9;margin:.15em 0 .2em
+}
+.sub{color:#a39a93;line-height:1.6}
+#keysForm{display:grid;gap:18px;margin-top:30px}
+#keysForm label,#deductionForm label{font-size:.75rem;letter-spacing:.15em;color:#9e9690}
+#keysForm input,#deductionInput{
+  width:100%;margin-top:8px;padding:15px;border:1px solid #3b3232;background:#0a0a0b;color:#f0e9e2;
+  min-height:52px;font-size:1rem
+}
+.feedback{min-height:25px;margin-top:16px;font-weight:700}
+.feedback.bad{color:#e06d66}
+.feedback.good{color:#b7d7b9}
+.verified-list{margin:30px 0;border-top:1px solid #332b2b}
+.verified-list div{
+  display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid #332b2b
+}
+.verified-list b{color:#7fb28a}
+.logic{
+  margin:30px 0;padding:20px;border-left:3px solid var(--red);background:#0d0d0f;color:#c9c0b9
+}
+.riddle{font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-style:italic}
+#deductionForm{display:grid;gap:14px}
+.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:38px}
+.status-grid div{border:1px solid #332b2b;padding:14px;text-align:center}
+.status-grid span{display:block;font-size:.68rem;color:#807873;letter-spacing:.12em}
+.status-grid b{display:block;margin-top:6px}
+.active-text{color:var(--red2)}
+.activation-card{text-align:center}
+.activation-card h3{font-size:clamp(1.7rem,5vw,3rem);margin:0;color:#d1c4ba}
+.activation-copy{font-family:"Cormorant Garamond",serif;font-size:1.35rem;line-height:1.6;margin:34px 0}
+.book-button{font-size:.95rem}
+.book-shell{text-align:center}
+.book-shell p{color:#b2a8a1}
+.book-actions{margin:34px 0}
+.last-line{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.35rem!important;color:#e5dbd3!important}
+@media(max-width:600px){
+  .stage{padding:18px}
+  .status-grid{grid-template-columns:1fr}
+  .intro-card,.terminal,.activation-card,.book-shell{padding:24px 20px}
+  .note{font-size:1.15rem}
+  .sound-toggle{right:10px;bottom:10px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+.final-options{display:grid;gap:12px;margin-top:22px}
+.deduction-option{
+  display:flex;align-items:flex-start;gap:12px;padding:14px 13px;
+  border:1px solid #332b2b;background:#0d0d0f;color:#d6ccc5;cursor:pointer;line-height:1.45
+}
+.deduction-option input{margin-top:3px;accent-color:var(--red2);width:18px;height:18px;flex:0 0 auto}
+.deduction-option:hover{border-color:#654141;background:#121214}

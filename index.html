@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1014" />
+  <title>CASE 024 — Human Nature</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Roboto+Mono:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=case024v3" />
+</head>
+<body>
+  <main id="app">
+
+    <section id="introStage" class="stage active intro-stage">
+      <div class="bg-watermark"></div>
+      <div class="topline">
+        <span>04.10.2026</span>
+        <span>FINAL TRANSITION</span>
+      </div>
+
+      <div class="intro-layout">
+        <aside class="profile-card">
+          <div class="seal" aria-hidden="true">
+            <div class="seal-core">
+              <div class="profile-icon"></div>
+            </div>
+            <div class="seal-ring-text top">HUMAN BEHAVIOUR DIVISION</div>
+            <div class="seal-ring-text bottom">CASE ANALYSIS UNIT</div>
+          </div>
+
+          <div class="id-header">
+            <span>INVESTIGATOR RECORD</span>
+            <b>AUTHORISED</b>
+          </div>
+
+          <dl class="id-grid">
+            <div><dt>Name</dt><dd>Winstar Aturia</dd></div>
+            <div><dt>Designation</dt><dd>Investigator</dd></div>
+            <div><dt>Current Case</dt><dd>023</dd></div>
+            <div><dt>Next Case</dt><dd>024</dd></div>
+            <div><dt>Status</dt><dd>Transition Pending</dd></div>
+            <div><dt>Clearance</dt><dd>Level 24</dd></div>
+          </dl>
+        </aside>
+
+        <div class="intro-card">
+          <p class="eyebrow">BEFORE YOU OPEN THE FINAL FILE</p>
+          <h1>Investigator Aturia,</h1>
+
+          <div class="note">
+            <p>For the past three days, you have been collecting pieces without knowing exactly what they were for.</p>
+            <p>Three files. Three investigations. Three recovered keys.</p>
+            <p>I wanted this gift to feel like something you would actually enjoy uncovering, not simply something handed to you.</p>
+            <p>You spend so much time thinking about people — why they behave the way they do, what shapes them, what drives them, what they fear, and who they become because of it.</p>
+            <p>So I wondered:</p>
+            <blockquote>What would happen if you were given a case built around the questions you naturally ask?</blockquote>
+            <p>That question became this.</p>
+            <p>I wanted to make you something that felt like an investigation first — something you could examine, question, interpret, and discover for yourself.</p>
+            <p>Over the past three days, every file has been leading somewhere.</p>
+            <p>Now you have reached the final transition.</p>
+            <p><strong>Everything you need to proceed has already been placed in your possession.</strong></p>
+          </div>
+
+          <button id="continueBtn" class="primary">PROCEED TO FINAL ACCESS</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="keysStage" class="stage keys-stage">
+      <div class="bg-watermark"></div>
+      <div class="terminal">
+        <div class="mini-header">
+          <div class="mini-seal"><div class="mini-profile"></div></div>
+          <div>
+            <p class="eyebrow">CASE 024 // ACCESS GATE</p>
+            <h2>ENTER RECOVERED KEYS</h2>
+          </div>
+        </div>
+
+        <p class="sub">Three valid keys are required before the final case can be opened.</p>
+
+        <form id="keysForm" autocomplete="off">
+          <label>KEY 01
+            <input id="key1" type="text" autocomplete="off" placeholder="__________" />
+          </label>
+          <label>KEY 02
+            <input id="key2" type="text" autocomplete="off" placeholder="__________" />
+          </label>
+          <label>KEY 03
+            <input id="key3" type="text" autocomplete="off" placeholder="__________" />
+          </label>
+
+          <button class="primary" type="submit">VERIFY KEYS</button>
+        </form>
+
+        <p id="keysFeedback" class="feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="deductionStage" class="stage deduction-stage">
+      <div class="bg-watermark"></div>
+      <div class="terminal">
+        <p class="eyebrow">THREE KEYS VERIFIED</p>
+        <h2>FINAL DEDUCTION</h2>
+
+        <div class="verified-list">
+          <div><span>MOTIVE</span><b>✓</b></div>
+          <div><span>FEAR</span><b>✓</b></div>
+          <div><span>BECOMING</span><b>✓</b></div>
+        </div>
+
+        <div class="logic">
+          <p><strong>Motive</strong> explains the action.</p>
+          <p><strong>Fear</strong> influences the choice.</p>
+          <p><strong>Becoming</strong> describes what follows.</p>
+        </div>
+
+        <p class="riddle">What larger case do all three belong to?</p>
+
+        <form id="deductionForm" class="final-options">
+          <label class="deduction-option">
+            <input type="radio" name="deduction" value="IDENTITY">
+            <span><b>A.</b> Identity</span>
+          </label>
+          <label class="deduction-option">
+            <input type="radio" name="deduction" value="HUMAN NATURE">
+            <span><b>B.</b> Human Nature</span>
+          </label>
+          <label class="deduction-option">
+            <input type="radio" name="deduction" value="MEMORY">
+            <span><b>C.</b> Memory</span>
+          </label>
+          <label class="deduction-option">
+            <input type="radio" name="deduction" value="CHOICE">
+            <span><b>D.</b> Choice</span>
+          </label>
+          <button class="primary" type="submit">SUBMIT DEDUCTION</button>
+        </form>
+
+        <p id="deductionFeedback" class="feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="activationStage" class="stage activation-stage">
+      <div class="bg-watermark"></div>
+      <div class="activation-card">
+        <div class="activation-top">
+          <div class="seal small" aria-hidden="true">
+            <div class="seal-core"><div class="profile-icon"></div></div>
+            <div class="seal-ring-text top">HUMAN BEHAVIOUR DIVISION</div>
+            <div class="seal-ring-text bottom">CASE ANALYSIS UNIT</div>
+          </div>
+
+          <div class="status-grid">
+            <div><span>CASE 023</span><b>CLOSED</b></div>
+            <div><span>TRANSITION</span><b>COMPLETE</b></div>
+            <div><span>CASE 024</span><b class="active-text">ACTIVE</b></div>
+          </div>
+        </div>
+
+        <p class="eyebrow">FINAL ACCESS VERIFIED</p>
+        <h2>CASE 024</h2>
+        <h3>THE CASE OF HUMAN NATURE</h3>
+
+        <div class="investigator-strip">
+          <span>INVESTIGATOR:</span>
+          <b>WINSTAR ATURIA</b>
+        </div>
+
+        <p class="activation-copy">Your next file is ready.</p>
+
+        <button id="openBookBtn" class="book-button">OPEN CASE 024</button>
+      </div>
+    </section>
+
+    <section id="bookStage" class="stage book-stage">
+      <div class="bg-watermark"></div>
+      <div class="book-shell">
+        <div class="book-top">
+          <div class="seal mini" aria-hidden="true">
+            <div class="seal-core"><div class="profile-icon"></div></div>
+            <div class="seal-ring-text top">HUMAN BEHAVIOUR DIVISION</div>
+            <div class="seal-ring-text bottom">CASE ANALYSIS UNIT</div>
+          </div>
+          <div>
+            <p class="eyebrow">CASE 024 // ACTIVE</p>
+            <h2>THE CASE OF HUMAN NATURE</h2>
+            <p class="book-sub">A psychological mystery novella for Winstar Aturia.</p>
+          </div>
+        </div>
+
+        <div class="book-actions">
+          <a class="book-button" href="CASE_024_THE_CASE_OF_HUMAN_NATURE.pdf" target="_blank" rel="noopener">READ THE CASE FILE</a>
+        </div>
+
+        <p class="last-line">People. Patterns. Motives. Truth. And the story within.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">♪ SOUND: OFF</button>
+
+  <script src="script.js?v=case024v3"></script>
+</body>
+</html>
